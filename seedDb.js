@@ -113,45 +113,31 @@ function createAllBooks () {
   const p1 = createBook('The Name of the Wind (The Kingkiller Chronicle, #1)', authors[0], [genres[0]], 'Read', 'I have stolen princesses back from sleeping barrow kings. I burned down the town of Trebon. I have spent the night with Felurian and left with both my sanity and my life. I was expelled from the University at a younger age than most people are allowed in. I tread paths by moonlight that others fear to speak of during day. I have talked to Gods, loved women, and written songs that make the minstrels weep.', '9781473211896')
   const p2 = createBook('The Wise Mans Fear (The Kingkiller Chronicle, #2)', authors[1], [genres[1]], 'Unread', 'Picking up the tale of Kvothe Kingkiller once again, we follow him into exile, into political intrigue, courtship, adventure, love and magic... and further along the path that has turned Kvothe, the mightiest magician of his age, a legend in his own time, into Kote, the unassuming pub landlord.', '9788401352836')
   const p3 = createBook('The Slow Regard of Silent Things (Kingkiller Chronicle)', authors[1], [genres[0]], 'Read', 'Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.', '9780756411336')
-  return Promise.all([p1, p2, p3])
+  const p4 = createBook('Foo Bar', authors[2], [genres[2]], 'Read', 'Deep below the University, there is a dark place. Few people know of it: a broken web of ancient passageways and abandoned rooms. A young woman lives there, tucked among the sprawling tunnels of the Underthing, snug in the heart of this forgotten place.', '9780756411336')
+  return Promise.all([p1, p2, p3, p4])
 }
 
 deleteGenres()
   .then(() => {
-    deleteAuthors()
-      .then(() => {
-        deleteBooks()
-          .then(() => {
-            createAllAuthors()
-              .then(() => {
-                createAllGenres()
-                  .then(() => {
-                    createAllBooks()
-                      .then(() => {
-                        mongoose.connection.close()
-                      })
-                  })
-                  .catch((error) => {
-                    console.log('createAllGenre error', error)
-                    return (error)
-                  })
-              })
-              .catch((error) => {
-                console.log('createAllAuthor error', error)
-                return (error)
-              })
-          })
-          .catch((error) => {
-            console.log('createAllAuthor error', error)
-            return (error)
-          })
-      })
-      .catch((error) => {
-        console.log('createAllAuthor error', error)
-        return (error)
-      })
+    return deleteAuthors()
   })
+  .then(() => {
+    return deleteBooks()
+  })
+  .then(() => {
+    return createAllAuthors()
+  })
+  .then(() => {
+    return createAllGenres()
+  })
+  .then(() => {
+    return createAllBooks()
+  })
+  .then(() => {
+    mongoose.connection.close()
+  })
+
   .catch((error) => {
-    console.log('createAllAuthor error', error)
+    console.log('error', error)
     return (error)
   })

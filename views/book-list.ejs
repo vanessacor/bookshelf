@@ -1,0 +1,34 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+<div class="book-list">
+
+  <% bookList.forEach(function(book) { %>
+    <div class="book-card-wrapper">
+      <article class="book-card">
+        <header class="card-title">
+          <h3><%= book.title %></h3>
+          <button class="icon delete-book">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </header>
+        <div class="book-details">
+          <h3>Author:</h3>
+          <p class="book-author"><%= book.author.name %></p>
+          <h3>Genre:</h3>
+          <p class="book-genre"><%= book.genre.name %></p>
+        </div>
+        <footer>
+          <button class="button status-button"><%= book.status %></button>
+          <button clase="icon edit-book">
+            <i clase="far fa-edit"></i>
+          </button>
+        </footer>
+      </article>
+    </div>
+  <% }) %>
+
+</div>
+
+  <%- include('footer'); -%>
+</body>

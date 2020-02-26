@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+  
+  <main id="site-main" class="container">
+    <div class="library" >
+      <div class="introduction">
+        <h2>Welcome!</h2>
+      </div>
+    </div>
+  </main>
+  
+  <%- include('footer'); -%>
+</body>
+
