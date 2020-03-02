@@ -7,6 +7,7 @@ const Schema = mongoose.Schema
 const GenreSchema = new Schema(
   {
     name: { type: String, required: true, max: 100 }
+
   }
 )
 

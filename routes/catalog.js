@@ -16,7 +16,7 @@ router.get('/book/list', bookController.bookList)
 // GET request for add a book
 router.get('/book/add', bookController.addBookForm)
 
-// POST reques to add a book
+// POST request to add a book
 router.post('/book/add', bookController.addBookPost)
 
 module.exports = router

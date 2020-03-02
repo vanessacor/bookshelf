@@ -109,6 +109,18 @@ p { font-size: 16px; }
   }
 }
 
+#site-header a {
+  color: #f0f0f0;
+  text-decoration: none;
+  margin-right: 5px;
+  transition: 1s ease;
+}
+
+#site-header a:hover{
+  color: #f41f7b;
+  
+}
+
 /* site main */
 
 @media (min-width: 1224px) {
@@ -146,7 +158,7 @@ footer p {
 /*NEW BOOK FORM*/
 
 #new-book {
-  display: none;
+  display: block;
   max-width: 300px; /*mobile need media query */
   margin: 0 auto;
   padding: 5px;
@@ -250,6 +262,12 @@ footer p {
   background: #f42c1f;
 }
 
+#author {
+  position: relative;
+  border-bottom: 2px solid #181712;
+  margin-bottom: 30px;
+}
+
 #genre { position: relative; }
 
 #empty-genre {
@@ -275,7 +293,7 @@ footer p {
 
 #genre { border-bottom: 2px solid #181712; }
 
-#genre-options {
+#select-options {
   width: 100%;
   padding: 0 5px;
   font-size: 20px;
@@ -285,7 +303,7 @@ footer p {
   border-style: none;
 }
 
-#genre-options option {
+#select-options option {
   font-size: 16px;
   background-color: #959495;
   color: #f0f0f0;

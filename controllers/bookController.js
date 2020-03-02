@@ -10,8 +10,8 @@ exports.index = function (req, res) {
 // Display all the books
 exports.bookList = function (req, res, next) {
   Book.find()
-    // .populate('author')
-    // .populate('genre')
+    .populate('author')
+    .populate('genre')
     .exec()
     .then((listOfBooks) => {
       const results = { bookList: listOfBooks }
@@ -23,8 +23,28 @@ exports.bookList = function (req, res, next) {
 }
 
 // Display add book form on Get
-exports.addBookForm = function (req, res) {
-  res.send('NOT IMPLEMENTED: add book form')
+exports.addBookForm = function (req, res, next) {
+  const authorQuery = Author.find()
+  const categoryQuery = Genre.find()
+
+  Promise.all([authorQuery, categoryQuery])
+    .then((results) => {
+      const authors = results[0]
+      const genres = results[1]
+
+      const data = {
+        book: undefined,
+        title: 'Add a Book',
+        authors: authors,
+        genre: genres
+      }
+
+      res.render('book-form', data)
+    })
+
+    .catch((error) => {
+      next(error)
+    })
 }
 
 exports.addBookPost = function (req, res) {

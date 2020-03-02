@@ -1,0 +1,69 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+<form id="new-book">
+  <button type="button" class="icon" id="close-form">X</button>
+  <fieldset>
+    <legend id="form-legend"><%= title %></legend>
+
+    <div id="title" class="book-text-input">
+      <input type="text" name="book-title" class="book-text-input" required="true" value="<%= (!book ? '' : book.title) %>">
+      <label for="title">Title</label>
+    </div>
+
+    <div id="author" class="book-text-input">
+      <select type="text" name="book-author" class="book-text-input" required="true" id="select-options">
+        <% authors.forEach(function(author) {
+          if (book) { 
+        %>
+            <option value="<%= author.id %>" selected="<%= author.id.tostring() == book.author ? 'selected' : false %>"><%= author.name %></option>
+          <% } else { %>
+            <option value="<%= author.id %>"><%= author.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <label for="author"></label>
+    </div>
+
+    <div id="genre">
+      <select type="text" name="book-genre" class="book-text-input" required="true" id="select-options">
+        <% genre.forEach(function(genre) {
+          if (book) { 
+        %>
+            <option value="<%= genre.id %>" selected="<%= genre.id.tostring() == book.genre ? 'selected' : false %>"><%= genre.name %></option>
+          <% } else { %>
+            <option value="<%= genre.id %>"><%= genre.name %></option>
+          <% } %>
+        <% }) %>
+      </select>
+      <label for="genre"></label>
+    </div>
+
+    <div id="status">
+
+      <label class="radio-button">
+        <input type="radio" name="status" id="read" value="read">
+        <span>Read</span>
+      </label>
+      
+      <label class="radio-button">
+        <input type="radio" name="status" id="unread" value="unread">
+        <span>Unread</span>
+      </label>
+
+    </div>
+
+    <div id="summary" class="book-text-input">
+      <input type="text" name="book-summary" class="book-text-input" required="true" value="<%= (!book ? '' : book.summary) %>">
+      <label for="summary">Summary</label>
+    </div>
+    <div id="isbn" class="book-text-input">
+      <input type="text" name="book-isbn" class="book-text-input" required="true" value="<%= (!book ? '' : book.isbn) %>">
+      <label for="isbn">ISBN</label>
+    </div>
+
+    <button type="submit" id="add-button">ADD</button>
+        
+  </fieldset>
+</form>
+</body>
