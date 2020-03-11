@@ -47,6 +47,16 @@ p { font-size: 16px; }
 
 /* components */
 
+.button {
+  padding: 15px;
+  font-size: 30px;
+  color: #f0f0f0;
+  background-color: #f41f7b;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 1px 10px #ff8ba0;
+}
+
 .icon {
   padding: 5px;
   font-size: 16px;
@@ -145,16 +155,6 @@ p { font-size: 16px; }
   left: 41%;
 }
 
-footer .add-book-btn {
-  position: fixed;
-  top: 69%;
-  left: 41%;
-}
-
-footer p {
-  text-align: center;
-}
-
 /*NEW BOOK FORM*/
 
 #new-book {
@@ -177,6 +177,10 @@ footer p {
 #close-form {
   float: right;
   font-size: 25px;
+}
+
+#close-form a {
+  text-decoration: none;
 }
 
 @media (min-width: 1224px) {
@@ -433,7 +437,6 @@ footer p {
   background-color: #181712;
 }
 
-
 /* BOOK LIST */
 
 .book-list {
@@ -522,7 +525,19 @@ footer p {
   max-width: 222px;
   margin: 0;
   font-weight: lighter;
+  color: #181712;
   text-align: left;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.card-title a {
+  max-width: 222px;
+  margin: 0;
+  font-weight: lighter;
+  color: #181712;
+  text-align: left;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -562,4 +577,8 @@ footer p {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+footer {
+  text-align: center;
 }

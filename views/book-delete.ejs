@@ -1,0 +1,14 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+
+  <div class="container">
+    <h2><%= title %></h2>
+    <p>Delete <%=book.title %></p>
+      <p>Do you really want to delete this Book?</p>
+      <form method="POST" action=" ">
+        <input type="hidden" name="bookid" required="true" value="<%= book.id %>">
+        <button type="submit" class="button">Delete</button>
+      </form>
+  </div>
+</body>

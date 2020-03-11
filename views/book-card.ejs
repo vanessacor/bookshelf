@@ -10,7 +10,12 @@
       <h3>Author:</h3>
       <p class="book-author"><%= bookList.book.author.name %></p>
       <h3>Genre:</h3>
-      <p class="book-genre"><%= bookList.book.genre.name %></p>
+      <p class="book-genre">
+        <% bookList.book.genre.forEach(function(genre) {
+        %>
+          <span><%= genre.name %></span>
+        <% }) %>
+      </p>
     </div>
     <footer>
       <button class="button status-button"><%= bookList.book.status %></button>
