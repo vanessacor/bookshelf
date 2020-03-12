@@ -28,4 +28,7 @@ router.get('/book/:id/delete', bookController.deleteBookGet)
 // POST request to delete book
 router.post('/book/:id/delete', bookController.deleteBookPost)
 
+// GET request to update book
+router.get('/book/:id/update', bookController.updateBookGet)
+
 module.exports = router

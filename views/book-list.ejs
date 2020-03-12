@@ -28,7 +28,9 @@
         <footer>
           <button class="button status-button"><%= book.status %></button>
           <button class="icon edit-book">
-            <i class="far fa-edit"></i>
+            <a href="<%= book.url %>/update">
+              <i class="far fa-edit"></i>
+            </a>
           </button>
         </footer>
       </article>

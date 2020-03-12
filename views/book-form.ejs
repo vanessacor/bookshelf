@@ -18,7 +18,7 @@
           <% authors.forEach(function(author) {
             if (book) { 
               %>
-              <option value="<%= author.id %>" selected="<%= author.id.tostring() == book.author ? 'selected' : false %>"><%= author.name %></option>
+              <option value="<%= author.id %>" selected="<%= author.id === book.author.id ? 'selected' : false %>"><%= author.name %></option>
               <% } else { %>
                 <option value="<%= author.id %>"><%= author.name %></option>
                 <% } %>
@@ -30,10 +30,10 @@
 
       <div id="genre">
         <select type="text" name="genre" class="book-text-input" required="true" id="select-options">
-          <% genre.forEach(function(genre) {
+          <% genres.forEach(function(genre) {
             if (book) { 
           %>
-              <option value="<%= genre.id %>" selected="<%= genre.id.tostring() == book.genre ? 'selected' : false %>"><%= genre.name %></option>
+              <option value="<%= genre.id %>" selected="<%= genre.id === book.genre.id ? 'selected' : false %>"><%= genre.name %></option>
             <% } else { %>
               <option value="<%= genre.id %>"><%= genre.name %></option>
             <% } %>
@@ -66,7 +66,7 @@
         <label for="isbn">ISBN</label>
       </div>
 
-      <button type="submit" id="add-button">Add</button>
+      <button type="submit" id="add-button"><%= btnLabel %></button>
           
     </fieldset>
   </form>

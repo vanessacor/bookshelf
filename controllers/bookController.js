@@ -59,8 +59,9 @@ exports.addBookForm = function (req, res, next) {
       const data = {
         book: undefined,
         title: 'Add a Book',
+        btnLabel: 'Add',
         authors: authors,
-        genre: genres
+        genres: genres
       }
 
       res.render('book-form', data)
@@ -161,5 +162,36 @@ exports.deleteBookPost = function (req, res, next) {
     })
     .catch((error) => {
       next(error)
+    })
+}
+
+exports.updateBookGet = function (req, res, next) {
+  const book = Book.findById(req.params.id)
+    .populate('author')
+    .populate('genre')
+
+  const authors = Author.find()
+
+  const genres = Genre.find()
+
+  Promise.all([book, authors, genres])
+    .then((results) => {
+      const book = results[0]
+      const authors = results[1]
+      const genres = results[2]
+      if (!book) { // No results.
+        var err = new Error('book not found')
+        err.status = 404
+        return next(err)
+      }
+      // Successful, so render.
+      const data = {
+        btnLabel: 'Update',
+        title: book.title,
+        book,
+        authors,
+        genres
+      }
+      res.render('book-form', data)
     })
 }
