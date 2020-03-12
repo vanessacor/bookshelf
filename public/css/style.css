@@ -272,6 +272,22 @@ p { font-size: 16px; }
   margin-bottom: 30px;
 }
 
+#add-author, #add-genre {
+  position: absolute;
+  top: 114%;
+  left: 70%;
+  padding: 5px;
+  font-size: 10px;
+  color: #181712;
+  text-decoration: none;
+}
+
+#add-author:hover, #add-genre:hover {
+  color: #f41f7b;
+  transform: scale(1.5);
+  transition: 1s;
+}
+
 #genre { position: relative; }
 
 #empty-genre {
@@ -581,4 +597,34 @@ p { font-size: 16px; }
 
 footer {
   text-align: center;
+}
+
+
+/* Delete book message */
+
+#delete-book h2 {
+  font-size: 30px;
+}
+
+#delete-book form {
+  text-align: center;
+}
+
+#delete-book button {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+
+#delete-book button:hover {
+  box-shadow: none;
+}
+
+#cancel-delete {
+  background-color: #757571;
+}
+
+#cancel-delete a {
+  text-decoration: none;
+  color: #f0f0f0;
 }

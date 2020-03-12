@@ -2,13 +2,14 @@
 <body>
   <%- include('header'); -%>
 
-  <div class="container">
-    <h2><%= title %></h2>
-    <p>Delete <%=book.title %></p>
-      <p>Do you really want to delete this Book?</p>
+  <div class="container" id="delete-book">
+    <h2>Do you really want to delete this Book?</h2>
       <form method="POST" action=" ">
         <input type="hidden" name="bookid" required="true" value="<%= book.id %>">
         <button type="submit" class="button">Delete</button>
+        <button type="button" class="button" id="cancel-delete">
+          <a href="/catalog/book/list">No</a>
+        </button>
       </form>
   </div>
 </body>

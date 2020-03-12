@@ -17,14 +17,15 @@
         <select type="text" name="author" class="book-text-input" required="true" id="select-options">
           <% authors.forEach(function(author) {
             if (book) { 
-          %>
+              %>
               <option value="<%= author.id %>" selected="<%= author.id.tostring() == book.author ? 'selected' : false %>"><%= author.name %></option>
-            <% } else { %>
-              <option value="<%= author.id %>"><%= author.name %></option>
-            <% } %>
-          <% }) %>
+              <% } else { %>
+                <option value="<%= author.id %>"><%= author.name %></option>
+                <% } %>
+                <% }) %>
         </select>
         <label for="author"></label>
+        <a id="add-author" href="catalog/author/add">Add Author</a>
       </div>
 
       <div id="genre">
@@ -39,6 +40,7 @@
           <% }) %>
         </select>
         <label for="genre"></label>
+        <a id="add-genre" href="catalog/genre/add">Add Genre</a>
       </div>
 
       <div id="status">
