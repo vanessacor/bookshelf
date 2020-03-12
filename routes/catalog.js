@@ -4,34 +4,44 @@ const router = express.Router()
 
 // Require controller modules.
 const bookController = require('../controllers/bookController')
+const authorController = require('../controllers/authorController')
 
 /// Book ROUTES ///
 
 // GET catalog home page.
 router.get('/', bookController.index)
 
-// GET request for add a book
 router.get('/book/add', bookController.addBookForm)
 
-// POST request to add a book
 router.post('/book/add', bookController.addBookPost)
 
-// GET Book List
 router.get('/book/list', bookController.bookList)
 
-// GET request to specific book
 router.get('/book/:id', bookController.bookDetail)
 
-// GET request to delete book
 router.get('/book/:id/delete', bookController.deleteBookGet)
 
-// POST request to delete book
 router.post('/book/:id/delete', bookController.deleteBookPost)
 
-// GET request to update book
 router.get('/book/:id/update', bookController.updateBookGet)
 
-// POST request to update book
 router.post('/book/:id/update', bookController.updateBookPost)
+
+/// Author ROUTES ///
+// router.get('/author/add', authorController.addAuthorForm)
+
+// router.post('/author/add', authorController.addAuthorPost)
+
+router.get('/author/list', authorController.authorList)
+
+// router.get('/author/:id', authorController.authorDetail)
+
+// router.get('/author/:id/delete', authorController.deleteAuthorGet)
+
+// router.post('/author/:id/delete', authorController.deleteAuthorPost)
+
+// router.get('/author/:id/update', authorController.updateAuthorGet)
+
+// router.post('/author/:id/update', authorController.updateAuthorPost)
 
 module.exports = router
