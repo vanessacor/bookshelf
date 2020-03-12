@@ -31,4 +31,7 @@ router.post('/book/:id/delete', bookController.deleteBookPost)
 // GET request to update book
 router.get('/book/:id/update', bookController.updateBookGet)
 
+// POST request to update book
+router.post('/book/:id/update', bookController.updateBookPost)
+
 module.exports = router

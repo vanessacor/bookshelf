@@ -195,3 +195,55 @@ exports.updateBookGet = function (req, res, next) {
       res.render('book-form', data)
     })
 }
+
+exports.updateBookPost = [
+  // Validate fields.
+  validator.check('title', 'title must not be empty.').isLength({ min: 1 }).trim(),
+  validator.check('author', 'Author must not be empty.').isLength({ min: 1 }).trim(),
+  validator.check('genre', 'Genre must not be empty.').isLength({ min: 1 }).trim(),
+  validator.check('status', 'Status must be selected.').isLength({ min: 1 }).trim(),
+  validator.check('summary', 'Summary must not be empty').isLength({ min: 1 }).trim(),
+  validator.check('isbn', 'isbn must not be empty').isLength({ min: 1 }).trim(),
+
+  // Sanitize fields (using wildcard).
+  validator.sanitizeBody('*').escape(),
+
+  (req, res, next) => {
+    // Extract the validation errors from a request.
+    const errors = validator.validationResult(req)
+
+    const book = new Book(
+      {
+        title: req.body.title,
+        author: req.body.author,
+        genre: req.body.genre,
+        status: req.body.status,
+        summary: req.body.summary,
+        isbn: req.body.isbn,
+        _id: req.params.id
+      })
+
+    if (!errors.isEmpty()) {
+      console.log('error', errors)
+      res.redirect('/catalog/book/list')
+    } else {
+      // Data from form is valid. Save product.
+
+      Book.findByIdAndUpdate(req.params.id, book, {}, function (err, thebook) {
+        if (err) { return next(err) }
+        // Successful - redirect to book detail page.
+        res.redirect(thebook.url)
+      })
+
+      // book.save(function (err) {
+      //   if (err) {
+      //     console.log('err', err)
+      //     return next(err)
+      //   }
+      //   // successful - redirect to new product record.
+      //   console.log('new book', book.url)
+      //   res.redirect(book.url)
+      // })
+    }
+  }
+]
