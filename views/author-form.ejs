@@ -1,0 +1,35 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+  <form method="POST" action="" id="new-book">
+    <button type="button" class="icon" id="close-form">
+      <a href="/catalog/author/list" class="icon">X</a>
+    </button>
+    <fieldset>
+      <legend id="form-legend"><%= title %></legend>
+
+      <div id="title" class="book-text-input">
+        <input type="text" name="firstName" class="book-text-input" required="true">
+        <label for="firstName">First Name</label>
+      </div>
+
+      <div id="title" class="book-text-input">
+        <input type="text" name="familyName" class="book-text-input" required="true">
+        <label for="familyName">Surname</label>
+      </div>
+
+      <div id="title" class="book-text-input">
+        <input type="date" name="dateOfBirth" class="book-text-input">
+        <label for="dateOfBirth">Date of Birth</label>
+      </div>
+
+      <div id="title" class="book-text-input">
+        <input type="date" name="dateOfDeath" class="book-text-input">
+        <label for="dateOfDeath">Date of Death</label>
+      </div>
+
+      <button type="submit" id="add-button"><%= btnLabel %></button>
+          
+    </fieldset>
+  </form>
+</body>

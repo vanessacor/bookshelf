@@ -28,13 +28,13 @@ router.get('/book/:id/update', bookController.updateBookGet)
 router.post('/book/:id/update', bookController.updateBookPost)
 
 /// Author ROUTES ///
-// router.get('/author/add', authorController.addAuthorForm)
+router.get('/author/add', authorController.authorAddForm)
 
-// router.post('/author/add', authorController.addAuthorPost)
+router.post('/author/add', authorController.authorAddPost)
 
 router.get('/author/list', authorController.authorList)
 
-// router.get('/author/:id', authorController.authorDetail)
+router.get('/author/:id', authorController.authorDetail)
 
 // router.get('/author/:id/delete', authorController.deleteAuthorGet)
 

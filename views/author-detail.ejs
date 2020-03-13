@@ -1,0 +1,37 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+
+  <div class="book-card-wrapper">
+    <article class="book-card">
+      <header class="card-title">
+        <h3><%= author.name%> %></h3>
+        <button class="icon delete-book">
+          <a href="<%= author.url %>/delete">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </button>
+      </header>
+      <div class="book-details">
+        <h3>Date of Birth:</h3>
+        <p class="book-author"><%= author.date_of_birth_formatted %></p>
+        <h3>Date of Death:</h3>
+        <p class="book-author"><%= author.date_of_death_formatted %></p>
+        <h3>Age:</h3>
+        <p class="book-author"><%= author.lifespan %></p>
+        <h3>Books:</h3>
+        <p class="book-genre">
+          <% books.forEach(function(book) {%>
+          <a href="<%= book.url %>"><%= book.title %></a>
+          <% }) %>
+        </p>
+      </div>
+      <footer>
+        <button class="icon edit-book">
+          <i class="far fa-edit"><a href="{{author.url}}/delete"></a></i>
+        </button>
+      </footer>
+    </article>
+  </div>
+
+</body>
