@@ -1,0 +1,31 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+
+  <div class="container" id="delete-book">
+    <% if (books.length) { %>
+      <h3><%= author.name %> wrote the following books:</h3>
+      <p> please delete them first</p>
+        <ul>
+          <% books.forEach(function(book) {
+          %>
+          <li id="author-delete">
+            <a href="<%= book.url %>"><%= book.title%></a>
+          </li>
+        <% }) %>
+
+        </ul>
+      
+    <% } else { %>
+      <h2>Do you really want to delete <%= author.name %> Author?</h2>
+        <form method="POST" action=" ">
+          <input type="hidden" name="bookid" required="true" value="<%= author.id %>">
+          <button type="submit" class="button">Delete</button>
+          <button type="button" class="button" id="cancel-delete">
+            <a href="/catalog/author/list">No</a>
+          </button>
+        </form>
+      
+    <% } %>
+  </div>
+</body>

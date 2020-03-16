@@ -9,22 +9,22 @@
       <legend id="form-legend"><%= title %></legend>
 
       <div id="title" class="book-text-input">
-        <input type="text" name="firstName" class="book-text-input" required="true">
+        <input type="text" name="firstName" class="book-text-input" required="true" value="<%= (typeof author === 'undefined' ? '' : author.firstName) %>">
         <label for="firstName">First Name</label>
       </div>
 
       <div id="title" class="book-text-input">
-        <input type="text" name="familyName" class="book-text-input" required="true">
+        <input type="text" name="familyName" class="book-text-input" required="true" value="<%= (typeof author === 'undefined'? '' : author.familyName) %>">
         <label for="familyName">Surname</label>
       </div>
 
       <div id="title" class="book-text-input">
-        <input type="date" name="dateOfBirth" class="book-text-input">
+        <input type="date" name="dateOfBirth" class="book-text-input" value="<%= (typeof author === 'undefined' ? '' : author.dateOfBirth) %>">
         <label for="dateOfBirth">Date of Birth</label>
       </div>
 
       <div id="title" class="book-text-input">
-        <input type="date" name="dateOfDeath" class="book-text-input">
+        <input type="date" name="dateOfDeath" class="book-text-input" value="<%= (typeof author === 'undefined' ? '' : author.dateOfDeath) %>">
         <label for="dateOfDeath">Date of Death</label>
       </div>
 

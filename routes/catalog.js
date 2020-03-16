@@ -5,6 +5,7 @@ const router = express.Router()
 // Require controller modules.
 const bookController = require('../controllers/bookController')
 const authorController = require('../controllers/authorController')
+const genreController = require('../controllers/genreController')
 
 /// Book ROUTES ///
 
@@ -36,12 +37,28 @@ router.get('/author/list', authorController.authorList)
 
 router.get('/author/:id', authorController.authorDetail)
 
-// router.get('/author/:id/delete', authorController.deleteAuthorGet)
+router.get('/author/:id/delete', authorController.deleteAuthorGet)
 
-// router.post('/author/:id/delete', authorController.deleteAuthorPost)
+router.post('/author/:id/delete', authorController.deleteAuthorPost)
 
-// router.get('/author/:id/update', authorController.updateAuthorGet)
+router.get('/author/:id/update', authorController.updateAuthorGet)
 
-// router.post('/author/:id/update', authorController.updateAuthorPost)
+router.post('/author/:id/update', authorController.updateAuthorPost)
 
+// Genre ROUTES
+router.get('/genre/add', genreController.genreAddForm)
+
+router.post('/genre/add', genreController.genreAddPost)
+
+router.get('/genre/list', genreController.genreList)
+
+router.get('/genre/:id', genreController.genreDetail)
+
+router.get('/genre/:id/delete', genreController.deleteGenreGet)
+
+router.post('/genre/:id/delete', genreController.deleteGenrePost)
+
+router.get('/genre/:id/update', genreController.updateGenreGet)
+
+router.post('/genre/:id/update', genreController.updateGenrePost)
 module.exports = router

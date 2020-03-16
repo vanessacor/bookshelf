@@ -234,16 +234,6 @@ exports.updateBookPost = [
         // Successful - redirect to book detail page.
         res.redirect(thebook.url)
       })
-
-      // book.save(function (err) {
-      //   if (err) {
-      //     console.log('err', err)
-      //     return next(err)
-      //   }
-      //   // successful - redirect to new product record.
-      //   console.log('new book', book.url)
-      //   res.redirect(book.url)
-      // })
     }
   }
 ]

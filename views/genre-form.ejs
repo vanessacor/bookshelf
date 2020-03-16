@@ -1,0 +1,20 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+  <form method="POST" action="" id="new-book">
+    <button type="button" class="icon" id="close-form">
+      <a href="/catalog/genre/list" class="icon">X</a>
+    </button>
+    <fieldset>
+      <legend id="form-legend"><%= title %></legend>
+
+      <div id="title" class="book-text-input">
+        <input type="text" name="name" class="book-text-input" required="true" value="<%= (typeof genre === 'undefined' ? '' : genre.name) %>">
+        <label for="firstName">Genre</label>
+      </div>
+
+      <button type="submit" id="add-button"><%= btnLabel %></button>
+          
+    </fieldset>
+  </form>
+</body>

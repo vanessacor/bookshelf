@@ -1,0 +1,35 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+  
+  <div class="container book-list">
+    <h2 id="author-list"><%= genre.name %></h2>
+
+    <% if (books.length === 0) { %>
+      <p class="genre-detail"> there is no books with this genre</p>
+    <% }  else { %>
+      <ul class="genre-detail">
+      <p>Books with this genre</p>
+      <% books.forEach(function(book) { %>
+        <li>
+          <a href="<%= book.url %>"><%= book.title %> by <%= book.author.name %></a> 
+        </li>
+      <% }) %>
+    </ul>
+    <% } %>
+
+  </div>
+  <footer class="container genre-detail">
+    <button class="button" id="update-genre">
+      <a href="<%= genre.url %>/update">
+       Update
+      </a>
+    </button>
+    <button class="button" id="delete-genre">
+      <a href="<%= genre.url %>/delete">
+       Delete
+      </a>
+    </button>
+  </footer>
+</body>
+

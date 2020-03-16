@@ -1,0 +1,31 @@
+<%- include('head'); -%>
+<body>
+  <%- include('header'); -%>
+
+  <div class="container" id="delete-book">
+    <% if (books.length) { %>
+      <h3>The following books are categorize with this gender:</h3>
+      <p> please delete them first</p>
+        <ul>
+          <% books.forEach(function(book) {
+          %>
+          <li id="author-delete">
+            <a href="<%= book.url %>"><%= book.title%></a>
+          </li>
+        <% }) %>
+
+        </ul>
+      
+    <% } else { %>
+      <h2>Do you really want to delete <%= genre.name %> genre?</h2>
+        <form method="POST" action=" ">
+          <input type="hidden" name="genreid" required="true" value="<%= genre.id %>">
+          <button type="submit" class="button">Delete</button>
+          <button type="button" class="button" id="cancel-delete">
+            <a href="/catalog/genre/list">No</a>
+          </button>
+        </form>
+      
+    <% } %>
+  </div>
+</body>

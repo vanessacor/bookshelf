@@ -3,7 +3,7 @@
   <%- include('header'); -%>
 
   <div class="container" id="delete-book">
-    <h2>Do you really want to delete this Book?</h2>
+    <h2>Do you really want to delete the <%= book.title %> Book?</h2>
       <form method="POST" action=" ">
         <input type="hidden" name="bookid" required="true" value="<%= book.id %>">
         <button type="submit" class="button">Delete</button>
