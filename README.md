@@ -6,3 +6,9 @@
   In this project I built another version of [My Books](https://vanessacor.github.io/site/experiments/library/), adding the backend.
 
   It is build using Node.js, express, mongoose and ejs.
+
+# todo
+  - refactor
+  - clean css
+  
+
