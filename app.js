@@ -1,9 +1,11 @@
+var path = require('path')
 var createError = require('http-errors')
 var express = require('express')
-var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
-// var ejsLint = require('ejs-lint')
+var mongoose = require('mongoose')
+var dotenv = require('dotenv')
+dotenv.config()
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
@@ -12,8 +14,7 @@ var catalogRouter = require('./routes/catalog')
 var app = express()
 
 // Set up mongoose connection
-var mongoose = require('mongoose')
-var mongoDB = 'mongodb+srv://homero:TAd8wtag8V7J5fv@cluster0-2dclv.mongodb.net/bookshelf1?retryWrites=true&w=majority'
+var mongoDB = process.env.MONGODB_URI
 
 mongoose.connect(mongoDB, { useNewUrlParser: true })
 var db = mongoose.connection

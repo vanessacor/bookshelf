@@ -1,2 +1,0 @@
-mongodb+srv://homero:TAd8wtag8V7J5fv@cluster0-2dclv.mongodb.net/bookshelf?retryWrites=true&w=majority
-

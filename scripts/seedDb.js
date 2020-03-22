@@ -10,9 +10,9 @@ if (!userArgs[0].startsWith('mongodb')) {
     return
 }
 */
-const Book = require('./models/book')
-const Author = require('./models/author')
-const Genre = require('./models/genre')
+const Book = require('../models/book')
+const Author = require('../models/author')
+const Genre = require('../models/genre')
 
 const mongoose = require('mongoose')
 const mongoDB = userArgs[0]
