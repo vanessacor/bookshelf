@@ -137,6 +137,23 @@ p { font-size: 16px; }
   #site-main { padding-top: 30px }
 }
 
+
+
+
+
+
+
+
+/* -- pages -- */
+
+/* error */
+
+.error {
+  text-align: center;
+}
+
+
+/* home */
 .introduction {
   margin-bottom: 5px;
   text-align: center;

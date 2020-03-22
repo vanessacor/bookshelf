@@ -1,4 +1,6 @@
 'use strict'
+const ObjectId = require('mongoose').Types.ObjectId
+
 const Book = require('../models/book')
 const Author = require('../models/author')
 const Genre = require('../models/genre')
@@ -25,17 +27,21 @@ exports.bookList = function (req, res, next) {
 }
 
 exports.bookDetail = function (req, res, next) {
+  if (!ObjectId.isValid(req.params.id)) {
+    const err = new Error('book not found')
+    err.status = 404
+    return next(err)
+  }
   Book.findById(req.params.id)
     .populate('author')
     .populate('genre')
     .exec()
     .then((book) => {
-      if (!book) { // No results.
-        var err = new Error('book not found')
+      if (!book) {
+        const err = new Error('book not found')
         err.status = 404
         return next(err)
       }
-      // Successful, so render.
       const data = {
         title: book.title,
         book: book
@@ -127,7 +133,7 @@ exports.deleteBookGet = function (req, res, next) {
     .then((results) => {
       const books = results
 
-      if (books == null) { // No results.
+      if (books == null) {
         res.redirect('/catalog/book')
       }
 
@@ -149,7 +155,7 @@ exports.deleteBookPost = function (req, res, next) {
     .then((results) => {
       const book = results
 
-      if (book == null) { // No results.
+      if (book == null) {
         res.redirect('/catalog/book')
       } else {
         Book.findByIdAndRemove(book, function deleteBook (err) {
@@ -179,8 +185,8 @@ exports.updateBookGet = function (req, res, next) {
       const book = results[0]
       const authors = results[1]
       const genres = results[2]
-      if (!book) { // No results.
-        var err = new Error('book not found')
+      if (!book) {
+        const err = new Error('book not found')
         err.status = 404
         return next(err)
       }

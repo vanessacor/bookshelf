@@ -61,4 +61,5 @@ router.post('/genre/:id/delete', genreController.deleteGenrePost)
 router.get('/genre/:id/update', genreController.updateGenreGet)
 
 router.post('/genre/:id/update', genreController.updateGenrePost)
+
 module.exports = router

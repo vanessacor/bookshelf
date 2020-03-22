@@ -26,8 +26,8 @@ exports.genreDetail = function (req, res, next) {
     .then((results) => {
       const genre = results[0]
       const books = results[1]
-      if (!genre) { // No results.
-        var err = new Error('author not found')
+      if (!genre) {
+        const err = new Error('author not found')
         err.status = 404
         return next(err)
       }
@@ -89,7 +89,7 @@ exports.deleteGenreGet = function (req, res, next) {
       const genre = results[0]
       const books = results[1]
 
-      if (genre === null) { // No results.
+      if (genre === null) {
         res.redirect('/catalog/genre/list')
       }
 

@@ -25,8 +25,8 @@ exports.authorDetail = function (req, res, next) {
     .then((results) => {
       const author = results[0]
       const books = results[1]
-      if (!author) { // No results.
-        var err = new Error('author not found')
+      if (!author) {
+        const err = new Error('author not found')
         err.status = 404
         return next(err)
       }
@@ -98,7 +98,7 @@ exports.deleteAuthorGet = function (req, res, next) {
       const author = results[0]
       const books = results[1]
 
-      if (author === null) { // No results.
+      if (author === null) {
         res.redirect('/catalog/author/list')
       }
 
@@ -121,7 +121,7 @@ exports.deleteAuthorPost = function (req, res, next) {
     .then((results) => {
       const author = results
 
-      if (author == null) { // No results.
+      if (author == null) {
         res.redirect('/catalog/author/list')
       } else {
         Author.findByIdAndRemove(author, function deleteAuthor (err) {

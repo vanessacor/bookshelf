@@ -1,3 +1,10 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%- include('head'); -%>
+<body id="error">
+  <%- include('header'); -%>
+  <div class="container error">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+  </div>
+</body>
+</html>
