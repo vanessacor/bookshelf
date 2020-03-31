@@ -1,34 +1,34 @@
 <%- include('head'); -%>
 <body>
   <%- include('header'); -%>
-  <form method="POST" action="" id="new-book">
-    <button type="button" class="icon" id="close-form">
+  <form method="POST" action="" class="new-element">
+    <button type="button" class="icon close-form">
       <a href="/catalog/author/list" class="icon">X</a>
     </button>
     <fieldset>
-      <legend id="form-legend"><%= title %></legend>
+      <legend class="form-legend"><%= title %></legend>
 
-      <div id="title" class="book-text-input">
-        <input type="text" name="firstName" class="book-text-input" required="true" value="<%= (typeof author === 'undefined' ? '' : author.firstName) %>">
+      <div class="text-input">
+        <input type="text" name="firstName" required="true" value="<%= (typeof author === 'undefined' ? '' : author.firstName) %>">
         <label for="firstName">First Name</label>
       </div>
 
-      <div id="title" class="book-text-input">
-        <input type="text" name="familyName" class="book-text-input" required="true" value="<%= (typeof author === 'undefined'? '' : author.familyName) %>">
+      <div class="text-input">
+        <input type="text" name="familyName" required="true" value="<%= (typeof author === 'undefined'? '' : author.familyName) %>">
         <label for="familyName">Surname</label>
       </div>
 
-      <div id="title" class="book-text-input">
-        <input type="date" name="dateOfBirth" class="book-text-input" value="<%= (typeof author === 'undefined' ? '' : author.dateOfBirth) %>">
+      <div class="text-input">
+        <input type="date" name="dateOfBirth" value="<%= (typeof author === 'undefined' ? '' : author.dateOfBirth) %>">
         <label for="dateOfBirth">Date of Birth</label>
       </div>
 
-      <div id="title" class="book-text-input">
-        <input type="date" name="dateOfDeath" class="book-text-input" value="<%= (typeof author === 'undefined' ? '' : author.dateOfDeath) %>">
+      <div class="text-input">
+        <input type="date" name="dateOfDeath" value="<%= (typeof author === 'undefined' ? '' : author.dateOfDeath) %>">
         <label for="dateOfDeath">Date of Death</label>
       </div>
 
-      <button type="submit" id="add-button"><%= btnLabel %></button>
+      <button type="submit" class="submit-button"><%= btnLabel %></button>
           
     </fieldset>
   </form>

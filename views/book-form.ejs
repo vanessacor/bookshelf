@@ -1,20 +1,20 @@
 <%- include('head'); -%>
 <body>
   <%- include('header'); -%>
-  <form method="POST" action="" id="new-book">
-    <button type="button" class="icon" id="close-form">
+  <form method="POST" action="" class="new-element">
+    <button type="button" class="icon close-form">
       <a href="/catalog/book/list" class="icon">X</a>
     </button>
     <fieldset>
-      <legend id="form-legend"><%= title %></legend>
+      <legend class="form-legend"><%= title %></legend>
 
-      <div id="title" class="book-text-input">
-        <input type="text" name="title" class="book-text-input" required="true" value="<%= (!book ? '' : book.title) %>">
+      <div class="text-input">
+        <input type="text" name="title" required="true" value="<%= (!book ? '' : book.title) %>">
         <label for="title">Title</label>
       </div>
 
-      <div id="author" class="book-text-input">
-        <select type="text" name="author" class="book-text-input" required="true" id="select-options">
+      <div id="author" class="text-input">
+        <select type="text" name="author" required="true" id="select-options">
           <% authors.forEach(function(author) {
             if (book) { 
               %>
@@ -29,7 +29,7 @@
       </div>
 
       <div id="genre">
-        <select type="text" name="genre" class="book-text-input" required="true" id="select-options">
+        <select type="text" name="genre" class="text-input" required="true" id="select-options">
           <% genres.forEach(function(genre) {
             if (book) { 
           %>
@@ -57,16 +57,16 @@
 
       </div>
 
-      <div id="summary" class="book-text-input">
-        <input type="text" name="summary" class="book-text-input" required="true" value="<%= (!book ? '' : book.summary) %>">
+      <div id="summary" class="text-input">
+        <input type="text" name="summary" required="true" value="<%= (!book ? '' : book.summary) %>">
         <label for="summary">Summary</label>
       </div>
       <div id="isbn" class="book-text-input">
-        <input type="text" name="isbn" class="book-text-input" required="true" value="<%= (!book ? '' : book.isbn) %>">
+        <input type="text" name="isbn" required="true" value="<%= (!book ? '' : book.isbn) %>">
         <label for="isbn">ISBN</label>
       </div>
 
-      <button type="submit" id="add-button"><%= btnLabel %></button>
+      <button type="submit" class="submit-button"><%= btnLabel %></button>
           
     </fieldset>
   </form>

@@ -2,21 +2,21 @@
 <body>
   <%- include('header'); -%>
   
-  <div class="book-list">
+  <div class="element-list">
     <h2 id="author-list">List of Authors</h2>
 
     <% authorList.forEach(function(author) { %>
-      <div class="book-card-wrapper">
-        <article class="book-card">
+      <div class="card-wrapper">
+        <article class="card">
           <header class="card-title">
             <h3><a href="<%= author.url %>"><%= author.name %></a></h3>
-            <button class="icon delete-book">
+            <button class="icon delete-element">
               <a href="<%= author.url %>/delete">
                 <i class="far fa-trash-alt"></i>
               </a>
             </button>
           </header>
-          <div class="book-details">
+          <div class="card-details">
             <h3>date of Birth:</h3>
             <p>
               <%= author.date_of_birth_formatted %>
@@ -31,7 +31,7 @@
             </p>
           </div>
           <footer>
-            <button class="icon edit-book">
+            <button class="icon edit-element">
               <a href="<%= author.url %>/update">
                 <i class="far fa-edit"></i>
               </a>
@@ -43,7 +43,7 @@
 
   </div>
   <footer class="container">
-    <button class="button add-book-btn">
+    <button class="button add-btn">
       <a href="/catalog/author/add">
         <i class="fas fa-plus"></i>
       </a>

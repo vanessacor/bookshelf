@@ -1,0 +1,113 @@
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+@media (min-width: 1224px) {
+  .card-wrapper {
+    margin-bottom: 90px;
+    justify-content: right;
+  }
+}
+
+.delete-element, 
+.edit-element {
+  position: absolute;
+  right: 0;
+  padding: 10px
+}
+
+.delete-element { top: 0; }
+
+.card {
+  position: relative;
+  min-width: 280px;
+  margin: 0 auto 30px;
+  background-color: $base-color-light;
+  border-left: 10px solid $accent-color-dark;
+  border-radius: 5px;
+
+  &:last-of-type { margin-bottom: 90px; }
+}
+
+@media (min-width: 1224px) {
+  .card {
+    margin-top: 0;
+    margin-right: 16px;
+    margin-bottom: 30px;
+    margin-left: 16px;
+  }
+}
+
+@media (min-width: 1224px) {
+  .card:last-of-type { margin-bottom: 30px; }
+}
+
+.card-title {
+  margin: 0 0 10px;
+  padding: 5px 14px 0;
+  background-color: #f41f7b24;
+  border-bottom: solid 2px $base-color-dark;
+
+  h3 {
+    max-width: 222px;
+    margin: 0;
+    font-weight: lighter;
+    color: $base-color-dark;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  a {
+    max-width: 222px;
+    margin: 0;
+    font-weight: lighter;
+    color: $base-color-dark;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+
+.card-details {
+  h3 {
+    margin: 10px 0 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $base-color-dark;
+  }
+  p {
+    padding-top: 0px;
+    margin: 0 0 16px 16px;
+    font-size: 16px;
+    color: $accent-color-dark;
+    text-align: left;
+  }
+}
+
+.status-button {
+  margin: 0px 0 16px 16px;
+  padding: 5px;
+  font-size: 16px;
+  color: $base-color-light;
+  border-radius: 5px;
+  background-color: $accent-color-dark;
+  border: none;
+  transition: 1s;
+}
+
+.status-button:hover {
+  color: $base-color-light;
+  background-color: $base-color-dark;
+  border: none;
+}
+
+.edit-element {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

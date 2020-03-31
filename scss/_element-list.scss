@@ -1,0 +1,27 @@
+.element-list {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  color: $base-color-dark;
+
+  .add-book-btn {
+    position: absolute;
+    bottom: -11%;
+    left: 41%;
+  }
+}
+
+@media (min-width: 1224px) {
+  .element-list {
+    margin: 0 40px;
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: 1224px) {
+  .book-list .add-book-btn {
+    top: 124%;
+    left: 44%;
+    bottom: unset;
+  }
+}

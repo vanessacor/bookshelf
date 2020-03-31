@@ -1,0 +1,38 @@
+// BUTTONS
+.add-btn {
+  padding: 15px;
+  font-size: 30px;
+  color: $base-color-light;
+  background-color: $accent-color-dark;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 1px 10px $accent-color-light;
+  
+  &:hover {
+    color: $base-color-dark;
+    box-shadow: none;
+    transition: 1s;
+  }
+}
+
+@media (min-width: 1224px) {
+  .add-btn {
+    padding: 22px;
+    font-size: 45px;
+  }
+}
+
+// ICONS
+.icon {
+  padding: 5px;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  
+  &:hover {
+    color: $accent-color-dark;
+    transform: scale(1.5);
+    transition: 1s;
+  }
+}
+

@@ -2,17 +2,17 @@
 <body>
   <%- include('header'); -%>
 
-  <div class="book-card-wrapper">
-    <article class="book-card">
+  <div class="card-wrapper">
+    <article class="card">
       <header class="card-title">
         <h3><%= title%> %></h3>
-        <button class="icon delete-book">
+        <button class="icon delete-element">
           <a href="<%= book.url %>/delete">
             <i class="far fa-trash-alt"></i>
           </a>
         </button>
       </header>
-      <div class="book-details">
+      <div class="card-details">
         <h3>Author:</h3>
         <p class="book-author"><%= book.author.name %></p>
         <h3>Genre:</h3>
@@ -29,8 +29,8 @@
       </div>
       <footer>
         <button class="button status-button"><%= book.status %></button>
-        <button class="icon edit-book">
-          <i class="far fa-edit"><a href="{{book.url}}/delete"></a></i>
+        <button class="icon edit-element">
+          <i class="far fa-edit"><a href="<%= book.url %>/update"></a></i>
         </button>
       </footer>
     </article>
