@@ -3,9 +3,9 @@
   <%- include('header'); -%>
   
   <div class="element-list">
-    <h2 id="author-list">List of Genres</h2>
+    <h2 class="author-list">List of Genres</h2>
 
-    <ul class="container" id="genre-list">
+    <ul class="container genre-list">
       <% genreList.forEach(function(genre) { %>
         <li>
           <a href="<%= genre.url %>"><%= genre.name %></a>

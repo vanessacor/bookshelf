@@ -1,0 +1,60 @@
+
+
+.genre-list {
+  margin-bottom: 40px;
+  li {
+    border: 2px solid $accent-color-dark;
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    color: $base-color-light;
+    &:hover {
+      color: $accent-color-dark;
+    }
+  }
+}
+
+
+.genre-detail {
+  color: $base-color-light;
+  margin-bottom: 50px;
+  button {
+    font-size: 18px;
+  }
+  p {
+    font-size: 20px;
+  }
+  a {
+    text-decoration: none;
+    color:$base-color-light;
+    &:hover {
+      color: $accent-color-dark;
+    }
+  }
+}
+
+.update-genre {
+  margin-right: 10px;
+  background-color: #959495;
+  
+  &:hover {
+    box-shadow: none;
+  }
+  &a:hover {
+    color: $base-color-light;
+  }
+}
+
+
+
+.delete-genre:hover {
+  box-shadow: none;
+  a:hover {
+    color: $base-color-light;
+  }
+}

@@ -47,16 +47,6 @@
 .text-input  {
   position: relative; 
 
-  &:focus { border-bottom: 2px solid $accent-color-dark; }
-
-  &:focus ~ label,
-  &:valid ~ label {
-  top: -12px;
-  left: 0;
-  font-size: 12px;
-  font-weight: bold;
-  color: $accent-color-dark;
-  }
   input {
     padding: 10px;
     margin-bottom: 30px;
@@ -67,6 +57,21 @@
     border: none;
     background-color: transparent;
     border-bottom: 2px solid $base-color-dark;
+    &:focus { border-bottom: 2px solid $accent-color-dark; }
+    &:focus ~ label {
+      top: -12px;
+      left: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: $accent-color-dark;
+    }
+    &:valid ~ label {
+      top: -12px;
+      left: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: $accent-color-dark;
+    }
   }
 
   label {
@@ -77,7 +82,7 @@
     pointer-events: none;
     transition: .5s;
   }
-
+  
   span {
     position: absolute;
     top: 16px;

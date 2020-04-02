@@ -106,14 +106,6 @@ h1 {
     font-size: 45px; } }
 .text-input {
   position: relative; }
-  .text-input:focus {
-    border-bottom: 2px solid #f41f7b; }
-  .text-input:focus ~ label, .text-input:valid ~ label {
-    top: -12px;
-    left: 0;
-    font-size: 12px;
-    font-weight: bold;
-    color: #f41f7b; }
   .text-input input {
     padding: 10px;
     margin-bottom: 30px;
@@ -124,6 +116,20 @@ h1 {
     border: none;
     background-color: transparent;
     border-bottom: 2px solid #181712; }
+    .text-input input:focus {
+      border-bottom: 2px solid #f41f7b; }
+    .text-input input:focus ~ label {
+      top: -12px;
+      left: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: #f41f7b; }
+    .text-input input:valid ~ label {
+      top: -12px;
+      left: 0;
+      font-size: 12px;
+      font-weight: bold;
+      color: #f41f7b; }
   .text-input label {
     position: absolute;
     top: 10px;
@@ -428,6 +434,57 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0; }
+
+.author-list {
+  color: #f0f0f0;
+  text-align: center;
+  font-size: 40px; }
+
+.author-delete a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #f41f7b; }
+
+.genre-list {
+  margin-bottom: 40px; }
+  .genre-list li {
+    border: 2px solid #f41f7b;
+    border-radius: 5px;
+    padding: 2px;
+    margin-bottom: 10px;
+    text-align: center; }
+  .genre-list a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #f0f0f0; }
+    .genre-list a:hover {
+      color: #f41f7b; }
+
+.genre-detail {
+  color: #f0f0f0;
+  margin-bottom: 50px; }
+  .genre-detail button {
+    font-size: 18px; }
+  .genre-detail p {
+    font-size: 20px; }
+  .genre-detail a {
+    text-decoration: none;
+    color: #f0f0f0; }
+    .genre-detail a:hover {
+      color: #f41f7b; }
+
+.update-genre {
+  margin-right: 10px;
+  background-color: #959495; }
+  .update-genre:hover {
+    box-shadow: none; }
+  .update-genrea:hover {
+    color: #f0f0f0; }
+
+.delete-genre:hover {
+  box-shadow: none; }
+  .delete-genre:hover a:hover {
+    color: #f0f0f0; }
 
 body {
   margin: 0;
