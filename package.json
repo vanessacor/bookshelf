@@ -22,7 +22,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.12.7",
     "morgan": "~1.9.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.2"
   },
   "devDependencies": {
