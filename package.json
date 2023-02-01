@@ -20,7 +20,7 @@
     "express-validator": "^6.4.0",
     "http-errors": "~1.6.3",
     "moment": "^2.29.2",
-    "mongoose": "^5.12.7",
+    "mongoose": "^5.13.15",
     "morgan": "~1.9.1",
     "node-sass": "^7.0.0",
     "nodemon": "^2.0.2"
